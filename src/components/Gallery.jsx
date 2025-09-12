@@ -19,18 +19,18 @@ export default function Gallery() {
   const images = [Rahichi, Sathire, KedarGouri, FM, Tarini];
   const slides = images.map((img) => ({ src: img }));
 
-  const [index, setIndex] = useState(-1);
+  const [index, setIndex] = useState(-1);            // for Lightbox
+  const [activeOverlay, setActiveOverlay] = useState(null); // track overlay
 
   return (
-    <section
-      id="gallery"
-      className="px-6  text-white relative"
-    >
+    <section id="gallery" className="px-6 text-white relative">
       {/* Section Heading */}
       <h2
         className="text-3xl sm:text-4xl font-bold mb-6 text-white text-center"
-          data-aos="fade-up"
-      >Certificates</h2>
+        data-aos="fade-up"
+      >
+        Certificates
+      </h2>
 
       {/* Gallery Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
@@ -39,7 +39,10 @@ export default function Gallery() {
             key={i}
             data-aos="zoom-in"
             data-aos-delay={i * 100}
-            className="relative group w-full h-48 sm:h-52 lg:h-56 overflow-hidden rounded-xl"
+            className="relative group w-full h-48 sm:h-52 lg:h-56 overflow-hidden rounded-xl cursor-pointer"
+            onClick={() =>
+              setActiveOverlay(activeOverlay === i ? null : i)
+            }
           >
             <img
               src={src}
@@ -47,17 +50,22 @@ export default function Gallery() {
               className="rounded-xl object-cover w-full h-full 
                          transition-transform duration-500 
                          group-hover:scale-110 group-active:scale-105"
-              onClick={() => setIndex(i)}
             />
+
             {/* Overlay effect */}
             <div
-              className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 
-                         flex items-center justify-center transition-all duration-500 
-                         cursor-pointer"
-              onClick={() => setIndex(i)}
+              className={`absolute inset-0 bg-black/80 flex items-center justify-center 
+                          transition-opacity duration-500 
+                          ${activeOverlay === i ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
             >
-              <span className="px-3 py-1 bg-white/30 border border-white/40 text-sm rounded-md flex items-center justify-center gap-3">
-               <BiShowAlt size={18} /><span>View</span>
+              <span
+                className="px-3 py-1 bg-white/30 border border-white/40 text-sm rounded-md flex items-center justify-center gap-3"
+                onClick={(e) => {
+                  e.stopPropagation(); // prevent closing overlay
+                  setIndex(i);         // open lightbox
+                }}
+              >
+                <BiShowAlt size={18} /> <span>View</span>
               </span>
             </div>
           </div>

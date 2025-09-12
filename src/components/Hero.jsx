@@ -10,8 +10,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="pt-9 sm:pt-18 pb-16 px-4 sm:px-6 md:pt-30 lg:px-16" id="hero">
-      <div className="flex flex-col md:flex-row items-center gap-12 sm:mt-3">
+    <section className="pt-3 pb-16 px-4 md:pt-18 " id="hero">
+      <div className="flex flex-col md:flex-row items-center gap-12 sm:mt-12 ">
         
         {/* Image Section */}
         <div
@@ -21,27 +21,25 @@ export default function Hero() {
         >
           <img
             src={Pro}
-            alt="Simanchala Padhi"
-            className="w-full max-w-[350px] sm:max-w-[400px] md:max-w-[360px] lg:max-w-[420px] xl:max-w-[480px] rounded-4xl shadow-2xl
-                       transition-transform duration-300 
-                       hover:scale-105 active:scale-106"
+            alt="Debasish Panda"
+            className="w-full max-w-[350px] sm:max-w-[400px] md:max-w-[350px] lg:max-w-[350px] xl:max-w-[360px]  shadow-md rounded-xl transition-transform duration-300  hover:scale-105 active:scale-106 border-1 border-gray-600"
           />
         </div>
 
         {/* Text Section */}
-        <div className="w-full md:w-1/2 text-center md:text-left md:mt-9">
+        <div className="w-full md:w-1/2 font-thin text-center md:text-left ">
           {/* Name */}
-          <h1
-            className="text-3xl sm:text-5xl md:text-5xl xl:text-7xl font-bold bg-gradient-to-r from-gray-300 to-gray-500 text-transparent bg-clip-text mb-2"
+          <h2
+            className="text-3xl sm:text-3xl  md:text-3xl xl:text-6xl  bg-gradient-to-r from-gray-300 to-gray-500 text-transparent bg-clip-text mb-2 font-thin"
             style={{ fontFamily: 'Lobster, cursive' }}
             data-aos="zoom-in"
           >
             Debasish Panda
-          </h1>
+          </h2>
 
           {/* Role */}
           <span
-            className="inline-block mb-4 text-2xl sm:text-3xl font-semibold uppercase text-transparent bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text"
+            className="inline-block mb-4 sm:mb-1 text-xl sm:text-xl font-semibold uppercase text-transparent bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-nowrap"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -50,7 +48,7 @@ export default function Hero() {
 
           {/* Paragraph */}
           <p
-            className="text-stone-300 text-base sm:text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed text-justify"
+            className="text-stone-300 text-base sm:text-lg md:text-[18px] max-w-xl mx-auto md:mx-0 leading-relaxed text-justify mr-3"
             data-aos="fade-up"
             data-aos-delay="200"
           >

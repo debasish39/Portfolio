@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { FaPaperPlane } from 'react-icons/fa';
-import toast, { Toaster } from 'react-hot-toast';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { FaPaperPlane } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -22,23 +22,23 @@ export default function Contact() {
     const data = Object.fromEntries(formData.entries());
     data.access_key = accessKey;
 
-    const loadingToast = toast.loading('Submitting...');
+    const loadingToast = toast.loading("Submitting...");
 
     try {
       const response = await axios.post(
-        'https://api.web3forms.com/submit',
+        "https://api.web3forms.com/submit",
         data,
-        { headers: { 'Content-Type': 'application/json' } }
+        { headers: { "Content-Type": "application/json" } }
       );
 
       if (response.data.success) {
-        toast.success('Message sent successfully!');
+        toast.success("Message sent successfully!");
         form.reset();
       } else {
-        toast.error('Something went wrong. Please try again.');
+        toast.error("Something went wrong. Please try again.");
       }
     } catch (error) {
-      toast.error('Submission failed. Please try again.');
+      toast.error("Submission failed. Please try again.");
     } finally {
       toast.dismiss(loadingToast);
       setLoading(false);
@@ -48,15 +48,13 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 py-16 text-white ">
       <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
-        {/* Hot-toast container */}
-        <Toaster position="top-right" reverseOrder={false} />
-
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">Contact Me</h2>
         <p className="mb-10 text-stone-300 text-lg">
-          Feel free to reach out via email or phone. I’ll get back to you as soon as possible.
+          Feel free to reach out via email or phone. I’ll get back to you as
+          soon as possible.
         </p>
 
-        <form onSubmit={handleSubmit} className="grid gap-6">
+        <form onSubmit={handleSubmit} className="grid gap-6" >
           {/* Name */}
           <input
             type="text"
@@ -97,11 +95,15 @@ export default function Contact() {
             data-aos="zoom-in"
             data-aos-delay="600"
             className={`flex items-center gap-2 px-6 py-3 font-semibold rounded-lg shadow-md justify-center cursor-pointer 
-              ${loading ? 'opacity-50 cursor-not-allowed bg-stone-700' : 'bg-gradient-to-r from-stone-600 to-stone-800 hover:shadow-lg hover:scale-105'}
+              ${
+                loading
+                  ? "opacity-50 cursor-not-allowed bg-stone-700"
+                  : "bg-gradient-to-r from-stone-600 to-stone-800 hover:shadow-lg hover:scale-105"
+              }
               text-white transform duration-300 focus:outline-none focus:ring-2 focus:ring-stone-400 transition`}
           >
             <FaPaperPlane />
-            {loading ? 'Sending...' : 'Send Message'}
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>

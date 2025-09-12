@@ -125,7 +125,7 @@ export default function Navbar() {
             <FaGithub />
           </a>
           <a
-            href="mailto:deba@example.com"
+            href="mailto:debasishpanda0333@gmail.com"
             className="text-stone-300 hover:text-white"
           >
             <FaEnvelope />
@@ -154,7 +154,8 @@ export default function Navbar() {
             <span className="text-[12px]">{link.name}</span>
 
             {/* Underline animation (just like desktop) */}
-            <span className="absolute -top-1 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
+          <span className="absolute -top-1 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+
           </a>
         ))}
       </div>

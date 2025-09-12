@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   FaGithub,
   FaLinkedinIn,
   FaEnvelope,
   FaWhatsapp,
   FaInstagram,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -14,13 +14,12 @@ export default function Footer() {
 
       {/* Grid Layout */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center sm:text-left">
-
         {/* Brand Info */}
         <div>
-          <h3 className="text-2xl font-bold text-white">Debasish Panda</h3>
+          <h3 className="text-2xl font-bold text-white"style={{ fontFamily: "Lobster, cursive" }}>Debasish Panda</h3>
           <p className="mt-1 text-sm leading-relaxed">
-            Python Full Stack Developer passionate about building scalable web applications 
-            and delivering clean, efficient code.
+            Python Full Stack Developer passionate about building scalable web
+            applications and delivering clean, efficient code.
           </p>
         </div>
 
@@ -28,16 +27,34 @@ export default function Footer() {
         <div className="flex flex-col items-center sm:items-start">
           <h4 className="text-xl font-semibold text-white">Quick Links</h4>
           <ul className="space-y-2 text-sm flex flex-col gap-1 sm:gap-0 w-39">
-            <li><a href="#about" className="hover:text-white transition">About</a></li>
-            <li><a href="#skills" className="hover:text-white transition">Skills</a></li>
-            <li><a href="#projects" className="hover:text-white transition">Projects</a></li>
-            <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
+            <li>
+              <a href="#about" className="hover:text-white transition">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#projects" className="hover:text-white transition">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#gallery" className="hover:text-white transition">
+                Gallery
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-white transition">
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
 
         {/* Social Media Icons */}
         <div className="flex flex-col items-center sm:items-start">
-          <h4 className="text-xl font-semibold mb-3 text-white">Connect With Me</h4>
+          <h4 className="text-xl font-semibold mb-3 text-white">
+            Connect With Me
+          </h4>
           <div className="flex gap-2 justify-center sm:justify-start flex-wrap">
             <a
               href="https://github.com/debasish39"
@@ -66,8 +83,8 @@ export default function Footer() {
             >
               <FaEnvelope />
             </a>
-                   <a
-              href="https://www.instagram.com/deba_369/"
+            <a
+              href="https://www.instagram.com/deba_963/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -78,10 +95,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Copyright */}
       <div className="mt-12 text-center text-xs text-stone-500 border-t border-stone-700 pt-4">
-        © {new Date().getFullYear()} Debasish Panda | Python Full Stack Developer. All rights reserved.
+        © {new Date().getFullYear()} Debasish Panda | Python Full Stack
+        Developer. All rights reserved.
       </div>
     </footer>
   );

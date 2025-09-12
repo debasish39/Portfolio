@@ -11,8 +11,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Debasish Panda Portfolio',
-        short_name: 'DebasishPortfolio',
+        name: 'Debasish ',
+        short_name: 'Debasish',
         description: 'Python Full Stack Developer Portfolio',
         theme_color: 'gray',
         background_color: '#ffffff',

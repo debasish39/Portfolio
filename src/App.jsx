@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from './components/Navbar';
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Serials from "./components/Projects";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";

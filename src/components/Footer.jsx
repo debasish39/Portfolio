@@ -39,7 +39,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="#gallery" className="hover:text-white transition">
-                Gallery
+                Certificates
               </a>
             </li>
             <li>

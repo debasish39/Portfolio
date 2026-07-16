@@ -48,11 +48,12 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 py-16 text-white ">
       <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6">Contact Me</h2>
-        <p className="mb-10 text-stone-300 text-lg">
-          Feel free to reach out via email or phone. I’ll get back to you as
-          soon as possible.
-        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#e8d8b8]">
+  Contact Me
+</h2>
+    <p className="mb-10 text-[#9a8e78] text-lg">
+  Feel free to reach out via email or phone. I'll get back to you as soon as possible.
+</p>
 
         <form onSubmit={handleSubmit} className="grid gap-6" >
           {/* Name */}
@@ -63,7 +64,16 @@ export default function Contact() {
             required
             data-aos="fade-right"
             data-aos-delay="300"
-            className="w-full px-4 py-3 rounded-lg bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-500 border border-gray-600"
+            className="w-full px-4 py-3 rounded-xl
+bg-[#141210]
+border border-[#3a3020]
+text-[#e8d8b8]
+placeholder-[#7a7060]
+focus:outline-none
+focus:border-[#c8a97e]
+focus:ring-2
+focus:ring-[#c8a97e]/30
+transition-all duration-300"
           />
 
           {/* Email */}
@@ -74,7 +84,16 @@ export default function Contact() {
             required
             data-aos="fade-left"
             data-aos-delay="400"
-            className="w-full px-4 py-3 rounded-lg bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-500 border border-gray-600"
+           className="w-full px-4 py-3 rounded-xl
+bg-[#141210]
+border border-[#3a3020]
+text-[#e8d8b8]
+placeholder-[#7a7060]
+focus:outline-none
+focus:border-[#c8a97e]
+focus:ring-2
+focus:ring-[#c8a97e]/30
+transition-all duration-300"
           />
 
           {/* Message */}
@@ -85,7 +104,16 @@ export default function Contact() {
             required
             data-aos="fade-up"
             data-aos-delay="500"
-            className="w-full px-4 py-3 rounded-lg bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-500 border border-gray-600"
+         className="w-full px-4 py-3 rounded-xl
+bg-[#141210]
+border border-[#3a3020]
+text-[#e8d8b8]
+placeholder-[#7a7060]
+focus:outline-none
+focus:border-[#c8a97e]
+focus:ring-2
+focus:ring-[#c8a97e]/30
+transition-all duration-300"
           ></textarea>
 
           {/* Submit Button */}
@@ -96,9 +124,9 @@ export default function Contact() {
             data-aos-delay="600"
             className={`flex items-center gap-2 px-6 py-3 font-semibold rounded-lg shadow-md justify-center cursor-pointer 
               ${
-                loading
-                  ? "opacity-50 cursor-not-allowed bg-stone-700"
-                  : "bg-gradient-to-r from-stone-600 to-stone-800 hover:shadow-lg hover:scale-105"
+               loading
+  ? "opacity-60 cursor-not-allowed bg-[#5a4a35]"
+  : "bg-gradient-to-r from-[#c8a97e] to-[#a07840] text-[#0a0a0c] hover:shadow-[0_8px_24px_rgba(200,169,126,.35)] hover:-translate-y-1"
               }
               text-white transform duration-300 focus:outline-none focus:ring-2 focus:ring-stone-400 transition`}
           >

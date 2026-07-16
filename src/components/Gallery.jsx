@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Lightbox from 'yet-another-react-lightbox';  
-import 'yet-another-react-lightbox/styles.css';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Download from "yet-another-react-lightbox/plugins/download";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Rahichi from './api.png';
 import Sathire from './aws.png';
 import KedarGouri from './w3school.png';
 import FM from './deloitte.png';
 import Tarini from './skillup.png';
 import { BiShowAlt } from "react-icons/bi";
-
+import spcl from './spcl.png';
 export default function Gallery() {
   useEffect(() => {
     AOS.init({ duration: 500, once: false });
   }, []);
 
-  const images = [Rahichi, Sathire, KedarGouri, FM, Tarini];
-  const slides = images.map((img) => ({ src: img }));
+  const images = [Rahichi, Sathire, KedarGouri, FM, Tarini,spcl];
+  const slides = images.map((img, i) => ({
+  src: img,
+  download: img,
+  title: `Certificate ${i + 1}`,
+}));
 
   const [index, setIndex] = useState(-1);            // for Lightbox
   const [activeOverlay, setActiveOverlay] = useState(null); // track overlay
@@ -73,13 +83,36 @@ export default function Gallery() {
       </div>
 
       {/* Lightbox Viewer */}
-      <Lightbox
-        open={index >= 0}
-        close={() => setIndex(-1)}
-        slides={slides}
-        index={index}
-        on={{ view: ({ index }) => setIndex(index) }}
-      />
+   <Lightbox
+  open={index >= 0}
+  close={() => setIndex(-1)}
+  slides={slides}
+  index={index}
+  plugins={[
+    Zoom,
+    Download,
+    Fullscreen,
+    Thumbnails,
+  ]}
+  zoom={{
+    maxZoomPixelRatio: 4,
+    zoomInMultiplier: 2,
+    doubleTapDelay: 300,
+    doubleClickDelay: 300,
+    wheelZoomDistanceFactor: 100,
+    pinchZoomDistanceFactor: 100,
+  }}
+  thumbnails={{
+    position: "bottom",
+    width: 100,
+    height: 70,
+    border: 2,
+    borderRadius: 8,
+  }}
+  on={{
+    view: ({ index }) => setIndex(index),
+  }}
+/>
     </section>
   );
 }

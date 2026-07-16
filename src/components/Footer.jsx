@@ -84,7 +84,7 @@ export default function Footer() {
               <FaEnvelope />
             </a>
             <a
-              href="https://www.instagram.com/deba_963/"
+              href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

@@ -9,7 +9,7 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 import ClickSpark from './components/ClickSpark';
 import Projects from "./components/Projects";
 import { Toaster } from "react-hot-toast";
-
+import Particles from "./components/Particles";
 export default function App() {
   return (
     <ClickSpark
@@ -85,6 +85,23 @@ export default function App() {
             overflowX: 'hidden',
           }}
         >
+          <Particles
+  className="absolute inset-0"
+  particleCount={180}
+  particleSpread={10}
+  speed={0.08}
+  particleColors={[
+    "#c8a97e",
+    "#d4b88a",
+    "#ffffff",
+  ]}
+  moveParticlesOnHover={true}
+  particleHoverFactor={0.25}
+  alphaParticles={true}
+  particleBaseSize={90}
+  sizeRandomness={1}
+  cameraDistance={18}
+/>
           {/* Fine grid */}
           <div style={{
             position: 'absolute',

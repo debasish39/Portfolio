@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import Pro from '../../public/our.png';
+import Pro from '/our.png';
 
 export default function Hero() {
   const canvasRef = useRef(null);
